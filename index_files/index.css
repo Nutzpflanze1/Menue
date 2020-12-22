@@ -1,0 +1,57 @@
+html {
+  size: 100%;
+}
+
+body {
+	background: beige;
+}
+
+ul {
+  height: 100%;
+	list-style-type: none;
+	font-family: sans-serif;
+}
+
+li {
+  justify-content: center;
+	align-self: center;
+  font-size: 25;
+	list-style-type: disc; 
+}
+
+.container{
+	display:flex;
+}
+
+.container div{
+	border:2px green solid;
+	padding:0px;
+}
+
+.box-1{
+	flex:1;
+}
+
+.box-2{
+	flex:2;
+}
+
+.button-box{
+  flex: 0.5;
+  float: right;
+}
+
+.images{
+  width: 100%;
+	object-fit: cover;
+	vertical-align: bottom;
+}
+
+#box {
+  height: 100%;
+  width: 100%;
+}
+
+#boxButton{
+  size: 100%;
+}
