@@ -1,9 +1,10 @@
 html {
-  size: 100%;
+  	size: 100%;
 }
 
 body {
 	background: beige;
+	display: table;
 }
 
 ul {
