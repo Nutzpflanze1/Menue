@@ -11,21 +11,25 @@ function addContainer() {
 	input_file.type = "file"
 	box1.appendChild(input_file);
 
-	var input_text = document.createElement("input");
-	input_text.type = "text";
-	box2.appendChild(input_text);
-
 	var output_file = document.createElement("output");
 	output_file.type = "file"
 	box1.appendChild(output_file);
 
-	var output_file = document.createElement("output");
-	output_file.type = "text"
-	box1.appendChild(output_file);
+	var submit_file = document.createElement("input");
+	submit_file.type = "Submit";
+	box1.appendChild(submit_file);
 
-	// Submit Button
+	var input_text = document.createElement("input");
+	input_text.type = "text";
+	box2.appendChild(input_text);
 
-	// Submit.Button toggles display(input_file, none)
+	var output_text = document.createElement("output");
+	output_text.type = "text"
+	box2.appendChild(output_text);
+
+	var submit_text = document.createElement("input");
+	submit_text.type = "Submit";
+	box2.appendChild(submit_text);
 
 	newContainer.classList.add("container");
 									
@@ -33,7 +37,23 @@ function addContainer() {
 	newContainer.appendChild(box2);
 									
 	box1.classList.add("box-1");
-	box2.classList.add("box-2");
+	box2.classList.add("content");
 							    
 	box.appendChild(newContainer); 
 }
+
+window.onload = function() {
+  if (localStorage.getItem('content')) {
+    document.querySelector('.content').innerHTML = localStorage.getItem('content');
+  }
+}
+
+let editBtn = document.querySelector('#edit_content');
+let content = document.querySelector('.content');
+
+editBtn.addEventListener('click', () => {
+  content.contentEditable = !content.isContentEditable;
+  if (content.contentEditable === 'false') {
+    localStorage.setItem('content', content.innerHTML);
+  }
+});
